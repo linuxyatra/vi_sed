@@ -3,13 +3,11 @@
 Vim is an editor to create or edit a text file. There are two modes in vim. One is the command mode and another is the insert mode.
 
 - In the `command` mode, user can move around the file, delete text, etc.
-
 - In the `insert` mode, user can insert text.
 
 **Changing mode from one to another**
 
 - From command mode to insert mode type a/A/i/I/o/O ( see details below)
-
 - From insert mode to command mode type Esc (escape key)
 
 ## Some useful commands for VIM
@@ -46,11 +44,11 @@ The following commands are used only in the commands mode.
 
 **Exit Commands**
 
-:wq Write file to disk and quit the editor
-:q! Quit (no warning)
-:q Quit (a warning is printed if a modified file has not been saved)
-ZZ Save workspace and quit the editor (same as :wq)
-: 10,25 w temp   write lines 10 through 25 into file named temp. Of course, other line numbers can be used. (Use :f to find out the line numbers you want.
+- :wq Write file to disk and quit the editor
+- :q! Quit (no warning)
+- :q Quit (a warning is printed if a modified file has not been saved)
+- ZZ Save workspace and quit the editor (same as :wq)
+- : 10,25 w temp   write lines 10 through 25 into file named temp. Of course, other line numbers can be used. (Use :f to find out the line numbers you want.
 
 **Text Deletion Commands**
 
@@ -85,41 +83,21 @@ ZZ Save workspace and quit the editor (same as :wq)
 
 **Other Useful Commands**
 
-Most commands can be repeated n times by typing a number, n, before
+Most commands can be repeated n times by typing a number, n, before the command. For example 10dd means delete 10 lines.
 
-the command. For example 10dd means delete 10 lines.
+**Repeat last command**
 
-. Repeat last command
+- cw Change current word to a new word
+- r Replace one character at the cursor position
+- R Begin overstrike or replace mode � use ESC key to exit
+- :/ pattern Search forward for the pattern
+- :? pattern Search backward for the pattern
+- n (used after either of the 2 search commands above to continue to find next occurrence of the pattern.
+- :g/pat1/s//pat2/g replace every occurrence of pattern1 (pat1) with pat2
+  - Example :g/tIO/s//Ada.Text_IO/g This will find and replace tIO by Ada.text_IO everywhere in the file.
 
-cw Change current word to a new word
-
-r Replace one character at the cursor position
-
-R Begin overstrike or replace mode � use ESC key to exit
-
-:/ pattern Search forward for the pattern
-
-:? pattern Search backward for the pattern
-
-n (used after either of the 2 search commands above to
-
-continue to find next occurrence of the pattern.
-
-:g/pat1/s//pat2/g replace every occurrence of pattern1 (pat1) with
-
-pat2
-
-Example :g/tIO/s//Ada.Text_IO/g
-
-This will find and replace tIO by Ada.text_IO everywhere in the file.
-
-:g/a/s// /g replace the letter a, by blank
-
-:g/a/s///g replace a by nothing
-
-note: Even this command be undone by u
-
- 
+- :g/a/s// /g replace the letter a, by blank
+- :g/a/s///g replace a by nothing note: Even this command be undone by u
 
 Examples
 
