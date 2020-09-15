@@ -10,7 +10,52 @@ Vim is an editor to create or edit a text file. There are two modes in vim. One 
 - From command mode to insert mode type a/A/i/I/o/O ( see details below)
 - From insert mode to command mode type Esc (escape key)
 
-## Some useful commands for VIM
+## Most commonly used commands
+
+**Highlight characters**
+
+- **v**   : activates the visual mode and one can move cursor to highlight required characters.
+- **^v**  : Highlight vertically. Very useful for inserting tab in multiple lines.
+
+**Find and Replace**
+
+- **:[range]s/{pattern}/{string}/[flags] [count]** syntax
+  - Example: **:.,+2s/XX/YY/g**    Substitute XX by YY in current + next 2 lines.
+  - Example: **:.,$s/XX/YY/g**  Current + all the following lines.
+
+**OPEN/CLOSE Multiple files**
+
+- vim f1.txt             [open single file]
+- vim -o f1.txt f2.txt   [open two files in horizontal]
+- vim -O f1.txt f2.txt   [open two files vertically]
+- CTRL w [R/L/T/B arrow] [toggle between different split windows]
+- CTRL +w w              [  Toggle between different split windows]
+- :e new_file            [open new file in this window]
+- :sp new_file           [splits Horizontally and opens the new file]
+- :vsp new_file          [splits vertically and opens the new file]
+- CTRL +w , s            [split Horizontally ]  
+- CTRL +w , v            [split vertically ]
+- CTRL +w, Q             [Quit the current window]
+
+* **Find and delete**
+
+- **:1,$s/pattern.*//g .**  [to delete everything after  (and including) that pattern
+- **:1,$s/pattern.*/pattern/g .**  [to delete everything after  (excluding) that pattern
+
+
+**deleting certain parts**
+
+- **:%normal 2x**     [Delete the first n characters of every lines]
+- **:%s/^ /**         [Delete the first n characters of every lines only if they are spaces]
+- **:%s/\s+$//e**     [Delete any trailing space at the end of all the lines]
+- **:%s/**
+- **:%s/^\s\+//e**    [Delete all initial spaces(or tabs) of all the lines]
+  - [^: begining of line; \s looks for spaces(including tabs); \+ looks for one and or more occurance; //e: first / means substitute by and nothing after it means nothing and \e means if not found the string then suppress the error.]
+- **:%le** **[==:left]**           [Global left alignment (much more efficient)]
+
+
+
+## More detailed set of commands
 
 **Text Entry Commands** (Used to start text entry)
 
